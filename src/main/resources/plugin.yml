@@ -1,0 +1,16 @@
+name: PointPodium
+version: ${project.version}
+main: dev.podium.PointPodium
+api-version: '1.21'
+depend: [PlaceholderAPI]
+softdepend: [pointsthing, PointThing]
+description: Top 3 podium statues and holograms fed by PointThing placeholders.
+commands:
+  podium:
+    description: Manage the top 3 podium
+    usage: /podium <set|remove|refresh|reload> [1-3]
+    permission: pointpodium.admin
+permissions:
+  pointpodium.admin:
+    description: Manage podiums
+    default: op

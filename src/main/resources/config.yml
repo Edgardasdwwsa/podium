@@ -1,0 +1,53 @@
+# How often the podium refreshes (seconds)
+update-interval-seconds: 10
+
+# PlaceholderAPI placeholders from PointThing. {rank} becomes 1, 2 or 3.
+placeholders:
+  name: "%points_top_{rank}_name%"
+  points: "%points_top_{rank}_points%"
+
+# Show 90100 as 90.1k
+compact-points: true
+
+# Text shown when nobody holds that rank yet
+empty-name: "&7Nobody yet"
+
+# true = full-body player skin (needs Paper 1.21.9+), false = floating head only.
+# On older servers it falls back to heads automatically.
+full-body: true
+
+# Height of the hologram above the statue's head (blocks)
+hologram-height: 0.75
+
+# Supports & colors and &#RRGGBB hex.
+# Use /podium set <rank> while standing where the statue should be.
+ranks:
+  1:
+    title: "&6&l1st Place"
+    rewards:
+      - "&7• &e$150.00 Cash"
+      - "&7• &e20 Legend Tokens"
+      - "&7• &eChampion God Set"
+      - "&7• &eChampion Chat Tag"
+    line: "&6#{rank} &f{name} &7({points})"
+  2:
+    title: "&f&l2nd Place"
+    rewards:
+      - "&7• &e$50.00 Cash"
+      - "&7• &e10 Legend Token"
+    line: "&f#{rank} &f{name} &7({points})"
+  3:
+    title: "&c&l3rd Place"
+    rewards:
+      - "&7• &e14d Legend Rank"
+    line: "&c#{rank} &f{name} &7({points})"
+
+messages:
+  prefix: "&8[&bPodium&8] &7"
+  set: "Podium #{rank} placed at your location."
+  removed: "Podium #{rank} removed."
+  reloaded: "Config reloaded."
+  refreshed: "Podiums refreshed."
+  usage: "Usage: /podium <set|remove|refresh|reload> [1-3]"
+  players-only: "Only players can do that."
+  no-permission: "You don't have permission."
